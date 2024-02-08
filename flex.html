@@ -17,24 +17,7 @@ Description : Flex Layouts.
 	-->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<style>	
-		/* Remove borders at the end, they have been add just for detecting positions of items*/	
-		div {
-			border: 1px dashed gray;	
-		}
-		.row{ 
-			border: 1px solid red;			
-		}
-		.large {
-			border: 1px solid blue;	
-		}
-		.medium {
-			border: 1px solid green;	
-		}
-		.small {
-			border: 1px solid yellow;	
-		}		
-	</style>
+	
 
 	<style>
 		/* CSS for menu. You don't need to touch this part */
@@ -68,52 +51,83 @@ Description : Flex Layouts.
         body { margin: 0; padding: 0; }
         img { max-width: 100%; height: auto; }
         .container { 
-			width: 100%;
+			padding: 0;
+
 		}
         .header, .footer { background-color: #f2f2f2; text-align: center; padding: 10px; width: 100%;}
 		.body { 
-			/*I need some CSS codes.*/
+			font-size: 20;
+			 
 		}
         .main { 
-			padding: 15px; 
-			/*I need some CSS codes.*/
+			padding: 10px; 
 		}
         
         .news-item { padding: 10px; }
         .row { 
-			display: block;
-			box-sizing: border-box;
-		}
+			display:flex;
+			flex-wrap:wrap;
+			}
         
 
         @media screen and (min-width: 769px) {
-            .menu { width: 150px; }     
+            .menu { 
+				width: 150px;
+				padding-right:100px;
+			 }  
+			.body{
+				display:flex;
+			}   
 			.large { 
-				/*I need some CSS codes.*/
+				width: 100%;
+
 			}
 			.medium { 
-				/*I need some CSS codes.*/
+				width: 70%;
 			}
 			.small { 
-				/*I need some CSS codes.*/
-			 }       
+				width: 30%;
+			}       
+
+			
         }
 
         @media screen and (max-width: 768px) {
 			.body { 
-				/*I need some CSS codes.*/
+				width:100%;
+				}
+			.large { 
+				width: 100%;
+
 			}
-            .menu ul { 
-				/*I need some CSS codes.*/
-			 }            
-            /*I need some CSS codes.*/
+			.medium { 
+				width: 60%;
+			}
+			.small { 
+				width: 40%;
+			}       
+			.menu ul { 
+				display:flex;
+				flex-direction: row;
+			}            
+            
         }
 
         @media screen and (max-width: 480px) {
             .news-item header h1 { font-size: 18px; }
             .medium, .small { 
-				/*I need some CSS codes.*/
+				width:100%;
 			 }
+			 .menu ul  { 
+
+				display:flex;
+				flex-direction: row;
+				justify-content: center;
+				flex-wrap: wrap;
+			}     
+			
+			
+
         }
     </style>
 </head>
@@ -171,7 +185,7 @@ Description : Flex Layouts.
 					<!-- Medium news item -->
 					<div class="medium news-item">
 						<header>
-							<h1>Your Name Takes a Historic Spacewalk Near the ISS</h1>
+							<h1>Julien Rabino Takes a Historic Spacewalk Near the ISS</h1>
 						</header>
 						<img src="images/medium.jpg" alt="Medium Image">
 						<article>
